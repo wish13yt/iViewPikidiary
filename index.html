@@ -1,10 +1,10 @@
 <h1>iViewPikidiary</h1>
 <p>A webapp to view a Pikidiary user's latest post.</p>
 <script>
-  var url = "https://pikidiary.lol/api/posts/" + encodeURIComponent(userInput);
+  var url = "https://pikidiary.lol/api/posts/" + userInput;
 </script>
   <form onsubmit="saveInput(); return false;">
-        <label for="userInput">Username</label>
+        <label for="userInput">Username:</label>
         <input type="text" id="userInput" name="userInput">
         <button type="submit">View dat post!!111!!!</button>
     </form>
