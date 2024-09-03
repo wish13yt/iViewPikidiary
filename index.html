@@ -1,8 +1,21 @@
 <h1>iViewPikidiary</h1>
 <p>A webapp to view a Pikidiary user's latest post.</p>
-<script>
-  var url = "https://pikidiary.lol/api/posts/" + userInput;
-</script>
+
+    <script type="text/javascript">
+        function saveInput() {
+            var userInput = document.getElementById("userInput").value.trim();
+            if (userInput) {
+                var url = "https://pikidiary.lol/api/posts/" + encodeURIComponent(userInput);
+                var link = document.createElement("a");
+                link.href = url;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                console.log("A not so skibidi error occured!");
+            }
+        }
+    </script>
   <form onsubmit="saveInput(); return false;">
         <label for="userInput">Username:</label>
         <input type="text" id="userInput" name="userInput">
