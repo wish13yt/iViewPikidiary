@@ -1,14 +1,14 @@
 <h1>iViewPikidiary</h1>
 <p>A webapp to view a Pikidiary user's latest post.</p>
 <form method="get" action="https://pikidiary.lol/api/posts/">
-    <input type="username" name="Username" placeholder="usernam" />
+    <input id="skibiditoilet" type="username" name="Username" placeholder="usernam" />
     <input type="submit" value="View dat post!111!!!" />
 </form>
 <p id="response">Oops! You haven't submitted the username.</p>
 <center><h2 id="response"></h2></center>    
 <script>
       let response = fetch(
-        "https://pikidiary.lol/api/posts/" + usernam
+        "https://pikidiary.lol/api/posts/" + skibiditoilet
       )
         .then((response) => response.json())
         .then((response) => {
