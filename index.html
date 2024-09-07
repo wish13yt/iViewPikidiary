@@ -1,21 +1,23 @@
 <h1>iViewPikidiary</h1>
 <p>A webapp to view a Pikidiary user's latest post.</p>
-<form method="get" action="https://pikidiary.lol/api/posts/">
-    <input type="username" name="Username" placeholder="usernam" />
-    <input type="submit" value="View dat post!111!!!" />
-</form>
-<p id="response">Oops! You haven't submitted the username.</p>
-<center><h2 id="response"></h2></center>    
-<script>
-      let response = fetch(
-        "https://pikidiary.lol/api/posts/" + usernam
-      )
-        .then((response) => response.json())
-        .then((response) => {
-          console.log(response.events[0].title);
-          return response;
-        })
-        .then((response) => {
-          document.getElementById("response").innerHTML = response.events[0].title;
-        });
-</script>
+
+    <script type="text/javascript">
+        function saveInput() {
+            var userInput = document.getElementById("userInput").value.trim();
+            if (userInput) {
+                var url = "https://pikidiary.lol/api/posts/" + encodeURIComponent(userInput);
+                var link = document.createElement("a");
+                link.href = url;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                console.log("+100 monapoints");
+            }
+        }
+    </script>
+  <form onsubmit="saveInput(); return false;">
+        <label for="userInput">Username:</label>
+        <input type="text" id="userInput" name="userInput">
+        <button type="submit">View dat post!!111!!!</button>
+    </form>
